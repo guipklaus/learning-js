@@ -6,25 +6,32 @@
   <title>Gilby</title>
 </head>
 <body>
+  <div>
   <input id="fieldName" autofocus placeholder="Digite seu nome">
-  <span id="fieldError" />
+  </div>
+  <div>
+    <span id="fieldNameError" />
+  </div>
 
   <script lang="javascript">
     const fieldName = document.getElementById("fieldName")
-    const fieldError = document.getElementById("fieldError")
+    const fieldNameError = document.getElementById("fieldNameError")
 
     function nameValidation(event) {
       if (event.target.value === "") {
-        fieldError.innerText = "Este campo é obrigatório."
+        fieldNameError.innerText = "Este campo é obrigatório."
+        fieldNameError.style.color = "red"
         return
       }
 
       if (event.target.value.length <= 3) {
-        fieldError.innerText = "Nome muito curto."
+        fieldNameError.innerText = "Nome muito curto."
+        fieldNameError.style.color = "orange"
         return
       }
 
-      fieldError.innerText = "Nome válido."
+      fieldNameError.innerText = "Nome válido."
+      fieldNameError.style.color = "green"
     }
 
     fieldName.oninput = nameValidation
