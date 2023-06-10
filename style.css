@@ -1,3 +1,10 @@
+.field input {
+  border: 1px solid gray;
+  padding: 5px;
+  margin-bottom: 2px;
+}
+
 .hint {
   font-size: x-small;
+  height: 20px;
 }
