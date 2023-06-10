@@ -7,5 +7,27 @@
 </head>
 <body>
   <input id="fieldName" autofocus placeholder="Digite seu nome">
+  <span id="fieldError" />
+
+  <script lang="javascript">
+    const fieldName = document.getElementById("fieldName")
+    const fieldError = document.getElementById("fieldError")
+
+    function nameValidation(event) {
+      if (event.target.value === "") {
+        fieldError.innerText = "Este campo é obrigatório."
+        return
+      }
+
+      if (event.target.value.length <= 3) {
+        fieldError.innerText = "Nome muito curto."
+        return
+      }
+
+      fieldError.innerText = "Nome válido."
+    }
+
+    fieldName.oninput = nameValidation
+  </script>
 </body>
 </html>
