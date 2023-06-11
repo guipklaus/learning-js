@@ -42,3 +42,12 @@ body {
   font-size: x-small;
   height: 20px;
 }
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 5px;
+}

@@ -41,3 +41,12 @@ function passwordValidation(event) {
 }
 
 fieldPassword.oninput = passwordValidation
+
+const loginButton = document.getElementById("loginButton")
+
+function login() {
+  console.log("login")
+}
+
+loginButton.onclick = login
+
