@@ -1,27 +1,36 @@
+function setFieldHint(element, message, color) {
+  element.innerText = message
+  element.style.color = color
+}
+
+function setFieldNameHint(message, color) {
+  setFieldHint(fieldNameHint, message, color)
+}
+
+function setFieldPasswordHint(message, color) {
+  setFieldHint(fieldPasswordHint, message, color)
+}
+
 const fieldName = document.getElementById("fieldName")
 const fieldNameHint = document.getElementById("fieldNameHint")
 
 function nameValidation(event) {
   if (event.target.value === "") {
-    fieldNameHint.innerText = "Este campo é obrigatório."
-    fieldNameHint.style.color = "red"
+    setFieldNameHint("Este campo é obrigatório.", "red")
     return
   }
 
   if (event.target.value.length <= 3) {
-    fieldNameHint.innerText = "Nome muito curto."
-    fieldNameHint.style.color = "orange"
+    setFieldNameHint("Nome muito curto.", "orange")
     return
   }
 
   if (event.target.value.length === 20) {
-    fieldNameHint.innerText = "Tamanho máximo."
-    fieldNameHint.style.color = "red"
+    setFieldNameHint("Tamanho máximo.", "red")
     return
   }
 
-  fieldNameHint.innerText = "Nome válido."
-  fieldNameHint.style.color = "green"
+  setFieldNameHint("Nome válido.", "green")
 }
 
 fieldName.oninput = nameValidation
@@ -31,19 +40,16 @@ const fieldPasswordHint = document.getElementById("fieldPasswordHint")
 
 function passwordValidation(event) {
   if (event.target.value === "") {
-    fieldPasswordHint.innerText = "Este campo é obrigatório."
-    fieldPasswordHint.style.color = "red"
+    setFieldPasswordHint("Este campo é obrigatório.", "red")
     return
   }
 
   if (event.target.value.length <= 5) {
-    fieldPasswordHint.innerText = "Senha muito fraca."
-    fieldPasswordHint.style.color = "orange"
+    setFieldPasswordHint("Senha muito fraca.", "orange")
     return
   }
 
-  fieldPasswordHint.innerText = "Senha ótima."
-  fieldPasswordHint.style.color = "green"
+  setFieldPasswordHint("Senha ótima.", "green")
 }
 
 fieldPassword.oninput = passwordValidation
