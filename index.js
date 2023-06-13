@@ -14,6 +14,12 @@ function nameValidation(event) {
     return
   }
 
+  if (event.target.value.length === 20) {
+    fieldNameHint.innerText = "Tamanho máximo."
+    fieldNameHint.style.color = "red"
+    return
+  }
+
   fieldNameHint.innerText = "Nome válido."
   fieldNameHint.style.color = "green"
 }
