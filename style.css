@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: lightgray;
+  background-color: rgb(150, 255, 255);
   height: 100vh;
 }
 
@@ -17,6 +17,7 @@ body {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 10px black;
+  width: 200px;
 }
 
 .form h2 {
@@ -31,23 +32,25 @@ body {
   justify-content: center;
 }
 
+.field {
+  width: 100%;
+}
+
 .field input {
   border: 1px solid gray;
   padding: 5px;
   margin-bottom: 2px;
   border-radius: 5px;
+  width: calc(100% - 10px);
 }
 
 .hint {
   font-size: x-small;
-  height: 20px;
+  min-height: 20px;
 }
 
 .actions {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
-}
-
-.button {
-  padding: 5px;
 }
